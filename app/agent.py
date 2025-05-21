@@ -1,15 +1,16 @@
 # File: app/agent.py
 
 from langchain.agents import initialize_agent, AgentType
-from langchain.chat_models import ChatOpenAI
 from langchain.tools import Tool
 from tools.cost_tools import list_idle_resources, suggest_optimizations
+from langchain_community.chat_models import ChatOpenAI
+
 import os
 
 class CostOptimizerAgent:
     def __init__(self, openai_key=None):
         self.openai_key = openai_key or os.getenv("OPENAI_API_KEY")
-        self.llm = ChatOpenAI(temperature=0, model="gpt-4", openai_api_key=self.openai_key)
+        self.llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo", openai_api_key=self.openai_key)
         self.agent = None
         self.last_context = None  # to avoid redundant runs
 
