@@ -1,5 +1,8 @@
 # File: app/main.py
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import streamlit as st
 from agent import CostOptimizerAgent
 
