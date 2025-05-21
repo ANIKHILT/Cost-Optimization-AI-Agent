@@ -1,8 +1,9 @@
 ### File: requirements.txt
 
-streamlit
-openai
 langchain
+langchain-community
+openai
+streamlit
 google-cloud-compute
 python-dotenv
 boto3
